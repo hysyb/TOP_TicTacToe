@@ -4,6 +4,7 @@ let grid = document.querySelector('.grid');
 function drawGrid(){
     for (i=0;i<ticTacToe.length;i++){
         let newSquare = document.createElement('div');
+        newSquare.classList.add('square');
         newSquare.textContent = ticTacToe[i];
         grid.appendChild(newSquare);
     }
@@ -17,4 +18,8 @@ function resetGrid(){
     }
     drawGrid();
 }
+function player(name, sign){
+    return {name, sign};
+}
+
 drawGrid();
