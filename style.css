@@ -1,9 +1,22 @@
 .header {
     text-align: center;
+    background-color: blanchedalmond;
+}
+.content {
+    display: flex;
+}
+.sidebar {
+    width: 20%;
+    background-color: antiquewhite;
 }
 .grid {
     display: grid;
+    padding: 5rem 5rem 5rem 5rem;
     grid-template-columns: 1fr 1fr 1fr;
+}
+.square {
+    width: 2rem;
+    height: 2rem;
 }
 .square:hover {
     background-color: yellow;
