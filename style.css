@@ -10,19 +10,24 @@
 }
 .content {
     display: flex;
+    height: 90vh;
+    width: 100%;
 }
 .sidebar {
     width: 20%;
   
     background-color: rgb(255, 245, 233);
 }
+.grid-container {
+    width: 100%;
+    background-color: rgb(221, 255, 255);
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
 .grid {
     display: grid;
-    padding: 10% 10% 10% 10%;
     grid-template-columns: 1fr 1fr 1fr;
-   
-    background-color: rgb(221, 255, 255);
-    
 }
 .square {
     width: 7.5rem;
