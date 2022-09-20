@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --gridLines: 2px solid black;
+}
 .header {
     text-align: center;
     background-color: rgb(255, 208, 137);
@@ -21,13 +24,13 @@
 .grid-container {
     width: 100%;
     background-color: rgb(221, 255, 255);
-    text-align: center;
     display: grid;
     place-items: center;
 }
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
 }
 .square {
     width: 7.5rem;
@@ -37,4 +40,16 @@
 }
 .square:hover {
     background-color: yellow;
+}
+.grid div:nth-child(1),.grid div:nth-child(2),.grid div:nth-child(4),.grid div:nth-child(5),.grid div:nth-child(7),.grid div:nth-child(8){
+    border-right: var(--gridLines);
+}
+.grid div:nth-child(1),.grid div:nth-child(2),.grid div:nth-child(3),.grid div:nth-child(4),.grid div:nth-child(5),.grid div:nth-child(6){
+    border-bottom: var(--gridLines);
+}
+.grid div:nth-child(2),.grid div:nth-child(3),.grid div:nth-child(5),.grid div:nth-child(6),.grid div:nth-child(8),.grid div:nth-child(9){
+    border-left: var(--gridLines);
+}
+.grid div:nth-child(4),.grid div:nth-child(5),.grid div:nth-child(6),.grid div:nth-child(7),.grid div:nth-child(8),.grid div:nth-child(9){
+    border-top: var(--gridLines);
 }
