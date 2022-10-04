@@ -6,6 +6,10 @@
     --gridLines: 2px solid black;
     --gridSize: 15rem;
 }
+body {
+    height: 100%;
+    width: 100%;
+}
 .header {
     text-align: center;
     background-color: rgb(255, 208, 137);
@@ -46,3 +50,26 @@ place-items: center;
 }
 .square:hover {
     background-color: yellow;
+}
+.hide {
+    display:none !important;
+}
+.winScreen {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(21, 21, 21, 0.9);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-size: 48px;
+}
+#restartButton {
+    font-size: 36px;
+    height: 50px;
+}
