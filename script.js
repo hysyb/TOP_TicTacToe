@@ -18,14 +18,30 @@ function gameLoop(id) {
         }else{
             squares[id].innerText = 'x';
         }
-        circleTurn = !circleTurn;
     } 
-    if (checkwin()){
-        console.log(`${circleTurn ? 'o ' : 'x '}` + 'wins');
+    if (checkwin('x')){
+        console.log('X wins');
+    }else if (checkwin('o')){
+        console.log('O wins')
     }
+    circleTurn = !circleTurn;
 }
-function checkwin(){
-        if (squares[0].innerHTML == 'x' && squares[1].innerHTML == 'x' && squares[2].innerHTML == 'x'){
+function checkwin(sign){
+        if (squares[0].innerHTML == sign && squares[1].innerHTML == sign && squares[2].innerHTML == sign){
+            return true;
+        }else  if (squares[3].innerHTML == sign && squares[4].innerHTML == sign && squares[5].innerHTML == sign){
+            return true;
+        }else  if (squares[6].innerHTML == sign && squares[7].innerHTML == sign && squares[8].innerHTML == sign){
+            return true;
+        }else if (squares[0].innerHTML == sign && squares[3].innerHTML == sign && squares[6].innerHTML == sign){
+            return true;
+        }else if (squares[1].innerHTML == sign && squares[4].innerHTML == sign && squares[7].innerHTML == sign){
+            return true;
+        }else if (squares[2].innerHTML == sign && squares[5].innerHTML == sign && squares[8].innerHTML == sign){
+            return true;
+        }else if (squares[0].innerHTML == sign && squares[4].innerHTML == sign && squares[8].innerHTML == sign){
+            return true;
+        }else  if (squares[2].innerHTML == sign && squares[4].innerHTML == sign && squares[6].innerHTML == sign){
             return true;
         }
         else return false;
