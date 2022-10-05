@@ -1,8 +1,3 @@
-let ticTacToe = ["x","o","x","o","x","o","x","o","x"]
-
-//let square0 = document.getElementById('0');
-//square0.addEventListener('click', function(e) {gameLoop(this.id)})
-
 let squares = document.querySelectorAll('.square');
 let turn = 0;
 let circleTurn = false;
@@ -17,8 +12,9 @@ for (i=0;i<squares.length;i++){
 for (i=0;i<restartBtn.length;i++){
 restartBtn[i].addEventListener('click', ()=>reset());
 }
-console.log(restartBtn);
+
 function gameLoop(id) {
+    
     if (squares[id].innerText == ""){
         if (circleTurn){
             squares[id].innerText = 'o';
@@ -34,8 +30,12 @@ function gameLoop(id) {
     }else if (checkwin('o')){
         console.log('O wins')
         winScreenO.classList.remove('hide');
+    }else if (turn == 8){
+        drawScreen.classList.remove('hide');
+        return;
     }
     circleTurn = !circleTurn;
+    turn++;
 }
 function checkwin(sign){
         if (squares[0].innerHTML == sign && squares[1].innerHTML == sign && squares[2].innerHTML == sign){
@@ -64,5 +64,6 @@ function reset(){
     winScreenO.classList.add('hide');
     winScreenX.classList.add('hide');
     drawScreen.classList.add('hide');
+    turn = 0;
     
 }
