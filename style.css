@@ -4,7 +4,7 @@
 }
 :root {
     --gridLines: 2px solid black;
-    --gridSize: 15rem;
+    --gridSize: 30rem;
 }
 body {
     height: 100%;
@@ -47,6 +47,8 @@ body {
     background-color: rgb(221, 255, 255);
 display: grid;
 place-items: center;
+font-size: calc(var(--gridSize)*0.2);
+font-family: sans-serif;
 }
 .square:hover {
     background-color: yellow;
