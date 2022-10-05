@@ -1,10 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --gridLines: 2px solid black;
+    --gridSize: 30rem;
+}
+body {
+    height: 100%;
+    width: 100%;
+}
 .header {
     text-align: center;
+    background-color: rgb(255, 208, 137);
+    height: 10vh;
+    padding-top: 5vh;
 }
-.grid {
+.content {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+}
+.sidebar {
+    width: 20%;
+  
+    background-color: rgb(255, 245, 233);
+}
+.main {
+    width: 80%;
     display: grid;
+    place-items: center;
+}
+.grid-container {
+    width: var(--gridSize);
+    height: var(--gridSize);
+    background-color: black;
+    display: grid;
+    place-items: center;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+}
+
+.square {
+    width: calc(var(--gridSize)/3);
+    height: calc(var(--gridSize)/3);
+    background-color: rgb(221, 255, 255);
+display: grid;
+place-items: center;
+font-size: calc(var(--gridSize)*0.2);
+font-family: sans-serif;
 }
 .square:hover {
     background-color: yellow;
+}
+.hide {
+    display:none !important;
+}
+.winScreen {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(21, 21, 21, 0.9);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-size: 48px;
+}
+.restartButton {
+    font-size: 36px;
+    height: 50px;
 }
