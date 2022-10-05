@@ -6,11 +6,18 @@ let ticTacToe = ["x","o","x","o","x","o","x","o","x"]
 let squares = document.querySelectorAll('.square');
 let turn = 0;
 let circleTurn = false;
+let winScreenX = document.getElementById('Xwin');
+let winScreenO = document.getElementById('Owin');
+let drawScreen = document.getElementById('Draw');
+let restartBtn = document.querySelectorAll('.restartButton');
 
 for (i=0;i<squares.length;i++){
     squares[i].addEventListener('click', function(e) { gameLoop(this.id)});
 };
-
+for (i=0;i<restartBtn.length;i++){
+restartBtn[i].addEventListener('click', ()=>reset());
+}
+console.log(restartBtn);
 function gameLoop(id) {
     if (squares[id].innerText == ""){
         if (circleTurn){
@@ -21,8 +28,12 @@ function gameLoop(id) {
     } 
     if (checkwin('x')){
         console.log('X wins');
+        winScreenX.classList.remove('hide');
+
+
     }else if (checkwin('o')){
         console.log('O wins')
+        winScreenO.classList.remove('hide');
     }
     circleTurn = !circleTurn;
 }
@@ -46,6 +57,12 @@ function checkwin(sign){
         }
         else return false;
 }
-function checkSquare(id){
-    console.log(squares[id].innerHTML);
+function reset(){
+    for (i=0;i<squares.length;i++){
+        squares[i].innerHTML = '';
+    }
+    winScreenO.classList.add('hide');
+    winScreenX.classList.add('hide');
+    drawScreen.classList.add('hide');
+    
 }
