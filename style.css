@@ -23,7 +23,10 @@ body {
 }
 .sidebar {
     width: 20%;
-  
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    text-align: center;
     background-color: rgb(255, 245, 233);
 }
 .main {
